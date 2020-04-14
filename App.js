@@ -1,10 +1,33 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 
 export default function App() {
+
+  const [nome, setNome] = useState('Samuel');
+  const [input, setInput] = useState('');
+
+  function alteraNome(){
+    setNome(input);
+    setInput('');
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+
+      <TextInput
+        placeholder='Digite o seu nome...'
+        value={input}
+        onChangeText={(texto) => setInput(texto)}
+      />
+
+      <TouchableOpacity style={styles.btn} onPress={() => {
+          input != '' ? alteraNome() : alert('Digite um nome!');
+        }}>
+        <Text style={styles.btnText}>Alterar</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.texto}>{nome}</Text>
+
     </View>
   );
 }
@@ -13,7 +36,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 80
   },
+  texto: {
+    fontSize: 35,
+    alignItems: 'center'
+  },
+  btn: {
+    backgroundColor: '#222',
+    alignItems: 'center'
+  },
+  btnText: {
+    color: '#fff'
+  }
 });
