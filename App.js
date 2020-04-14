@@ -23,7 +23,7 @@ export default function App() {
       <TouchableOpacity style={styles.btn} onPress={() => {
           input != '' ? alteraNome() : alert('Digite um nome!');
         }}>
-        <Text style={styles.btnText}>Alterar</Text>
+        <Text style={styles.btnText}>Alterar nome</Text>
       </TouchableOpacity>
 
       <Text style={styles.texto}>{nome}</Text>
