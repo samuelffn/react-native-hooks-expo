@@ -17,7 +17,8 @@ executar o comando npm start no terminal.
 AsyncStorage  
 Juntamente com o useEffect será usado o AsyncStorage, que servirá para guardar informações do estado de alguma variável.  
 Para quem estiver usando o Expo, basta utilizar este import: import { AsyncStorage } from 'react-native';  
-Para quem não está usando o Expo será ncessário instalar a dependência do AsyncStorage   
+Link de referência: https://docs.expo.io/versions/latest/react-native/asyncstorage/  
+Para quem não está usando o Expo será ncessário instalar a dependência do AsyncStorage  
 Comando para instalação: yarn add @react-native-community/async-storage  
 Link de referência: https://github.com/react-native-community/async-storage  
   

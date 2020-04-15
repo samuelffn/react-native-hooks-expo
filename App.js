@@ -47,6 +47,7 @@ export default function App() {
         placeholder='Digite o seu nome...'
         value={input}
         onChangeText={(texto) => setInput(texto)}
+        style={styles.textoInput}
       />
 
       <TouchableOpacity style={styles.btn} onPress={() => {
@@ -69,13 +70,19 @@ const styles = StyleSheet.create({
   },
   texto: {
     fontSize: 35,
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 5
   },
   btn: {
     backgroundColor: '#222',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginTop: 10
   },
   btnText: {
-    color: '#fff'
+    color: '#fff',
+    fontSize: 22
+  },
+  textoInput: {
+    fontSize: 18
   }
 });
