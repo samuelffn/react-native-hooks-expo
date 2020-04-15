@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import AsyncStorage from '@react-native-community/async-storage';
+//import AsyncStorage from '@react-native-community/async-storage'; //Para quem não estiver usando o Expo
+import { AsyncStorage } from 'react-native';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 
 export default function App() {
@@ -11,6 +12,33 @@ export default function App() {
     setNome(input);
     setInput('');
   }
+
+  //Component DidUpdate
+  //Toda vez que a State nome for alterada esta função será executada
+  //Esta função irá salvar a State nome no AsyncStorage
+  useEffect(() => {
+    async function saveStorage(){
+      await AsyncStorage.setItem('nomeSalvoAS', nome);
+    }
+    saveStorage();
+
+    //DidUmounted
+    //return() => { };
+
+  }, [nome]);
+
+  //Component DidMount
+  //Todas as vezes que o componente for montado na tela esta função será executada
+  //Esta função recupera o valos do State nome salvo no asysncStorage
+  useEffect(() => {
+    async function getStorage(){
+      const nomeStorage = await AsyncStorage.getItem('nomeSalvoAS');
+      if (nomeStorage !== null) {
+        setNome(nomeStorage);
+      }
+    }
+    getStorage();
+  }, []);
 
   return (
     <View style={styles.container}>
