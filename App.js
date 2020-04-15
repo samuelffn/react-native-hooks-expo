@@ -7,10 +7,15 @@ export default function App() {
 
   const [nome, setNome] = useState('Samuel');
   const [input, setInput] = useState('');
+  const nomeInput = useRef(null); //Será usado como referência em algum lugar. Aqui no caso está sendo usado no TextInput
 
   function alteraNome(){
     setNome(input);
     setInput('');
+  }
+
+  function novoNome(){
+    nomeInput.current.focus(); //Colocará o foco no TextInput(que foi referenciado). Recebe o foco e abre ao teclado
   }
 
   /* Component DidUpdate
@@ -43,7 +48,7 @@ export default function App() {
   /* O useMemo vai evitar que a ação de contar os caracteres do State nome seja contado toda vez que o valor de nome for alterado
   Ele só fará a contagem quando houver uma chamada do setNome, que é na ação do botão */
   const quantLetrasNome = useMemo(() => {
-    console.log('Fez a contagem de letras do nome');
+    //console.log('Fez a contagem das letras do nome');
     return nome.length;
   }, [nome]);
   /*Descomentar para testar*/
@@ -58,6 +63,7 @@ export default function App() {
         value={input}
         onChangeText={(texto) => setInput(texto)}
         style={styles.textoAux}
+        ref={nomeInput}
       />
 
       <TouchableOpacity style={styles.btn} onPress={() => {
@@ -69,6 +75,10 @@ export default function App() {
       <Text style={styles.texto}>{nome}</Text>
 
       <Text style={styles.textoAux}>Tem {quantLetrasNome} {quantLetrasNome > 1 ? 'letras' : 'letra'}</Text>
+
+      <TouchableOpacity onPress={novoNome}>
+        <Text style={styles.btnNovoNomeText}>Novo nome</Text>
+      </TouchableOpacity>
 
     </View>
   );
@@ -96,6 +106,11 @@ const styles = StyleSheet.create({
   },
   textoAux: {
     marginTop: 5,
-    fontSize: 18
+    fontSize: 20
+  },
+  btnNovoNomeText: {
+    color: '#222',
+    fontSize: 16,
+    marginTop: 10
   }
 });
