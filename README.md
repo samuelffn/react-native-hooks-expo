@@ -19,4 +19,3 @@ Juntamente com o useEffect será usado o AsyncStorage, que servirá para guardar
 Comando para instalação: yarn add @react-native-community/async-storage  
 Link de referência: https://github.com/react-native-community/async-storage  
   
-Teste  
