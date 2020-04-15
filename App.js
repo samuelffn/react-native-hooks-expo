@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import AsyncStorage from '@react-native-community/async-storage';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 
 export default function App() {
