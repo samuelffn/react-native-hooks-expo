@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useMemo} from 'react';
+import React, {useState, useEffect, useMemo, useRef} from 'react';
 //import AsyncStorage from '@react-native-community/async-storage'; //Para quem não estiver usando o Expo
 import { AsyncStorage } from 'react-native';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
