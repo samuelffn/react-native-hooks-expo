@@ -2,6 +2,7 @@ import React, {useState, useEffect, useMemo, useRef} from 'react';
 //import AsyncStorage from '@react-native-community/async-storage'; //Para quem não estiver usando o Expo
 import { AsyncStorage } from 'react-native';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
 
 export default function App() {
 
@@ -79,6 +80,8 @@ export default function App() {
       <TouchableOpacity onPress={novoNome}>
         <Text style={styles.btnNovoNomeText}>Novo nome</Text>
       </TouchableOpacity>
+
+      <Ionicons name="md-checkmark-circle" size={32} color="green" />
 
     </View>
   );
