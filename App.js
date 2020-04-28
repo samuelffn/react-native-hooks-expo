@@ -3,6 +3,7 @@ import React, {useState, useEffect, useMemo, useRef} from 'react';
 import { AsyncStorage } from 'react-native';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 
 export default function App() {
 
@@ -19,6 +20,10 @@ export default function App() {
     nomeInput.current.focus(); //Colocará o foco no TextInput(que foi referenciado). Recebe o foco e abre ao teclado
   }
 
+  function loginWithFacebook(){
+    alert('Vai logar com o Facebook');
+  }
+
   /* Component DidUpdate
   Toda vez que a State nome for alterada esta função será executada
   Esta função irá salvar a State nome no AsyncStorage */
@@ -28,7 +33,7 @@ export default function App() {
     }
     saveStorage();
 
-    //DidUmounted
+    //DidUmounted. Caso queira usar o DidUmounted basta descomentar abaixo
     //return() => { };
 
   }, [nome]);
@@ -82,6 +87,10 @@ export default function App() {
       </TouchableOpacity>
 
       <Ionicons name="md-checkmark-circle" size={32} color="green" />
+
+      <FontAwesome.Button name="facebook" backgroundColor="#3b5998" onPress={loginWithFacebook}>
+        Login with Facebook
+      </FontAwesome.Button>
 
     </View>
   );
