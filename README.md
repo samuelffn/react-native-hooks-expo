@@ -1,7 +1,7 @@
 # react-native-hooks-expo  
-React Native - Estudando React Hooks em um projeto com Expo.  
-Projeto usado para aprendizado e consultas.  
-Estudo de alguns componentes do React Hooks: useState, useEffect, useMemo, useRef.  
+React Native - Estudando React Hooks em um projeto com Expo  
+Projeto usado para aprendizado e consultas  
+Estudo de alguns componentes do React Hooks: useState, useEffect, useMemo, useRef  
 
 **Informações**  
 Instalar o Expo Cli: npm install -g expo-cli  
